@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+    <script>
+        function calculateArea() {
+            // Lấy giá trị từ các ô nhập liệu
+            var length = document.getElementById("length").value;
+            var width = document.getElementById("width").value;
+
+            // Kiểm tra giá trị hợp lệ
+            if (length > 0 && width > 0) {
+                var area = length * width; // Tính diện tích
+                document.getElementById("result").innerText = "Diện tích: " + area + ;
+            } else {
+                document.getElementById("result").innerText = "Vui lòng nhập giá trị hợp lệ!";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Tính diện tích hình chữ nhật</h1>
+
+    <!-- Form nhập chiều dài và chiều rộng -->
+    <form onsubmit="event.preventDefault(); calculateArea();">
+        <label for="length">Chiều dài :</label>
+        <input type="number" id="length" name="length" min="0" step="any" required>
+        <br><br>
+        
+        <label for="width">Chiều rộng :</label>
+        <input type="number" id="width" name="width" min="0" step="any" required>
+        <br><br>
+
+        <!-- Nút tính diện tích -->
+        <input type="submit" value="Tính diện tích">
+    </form>
+
+    <!-- Kết quả -->
+    <h2 id="result"></h2>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Game</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #f1f1f1;
+            border: 2px solid black;
+        }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Racing Game</h1>
+<p>Use the arrow keys to control the car. Avoid the enemy cars!</p>
+<canvas id="gameCanvas" width="400" height="600"></canvas>
+<p>Score: <span id="score">0</span></p>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Game settings
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+    const playerCarWidth = 50;
+    const playerCarHeight = 100;
+    let playerX = canvasWidth / 2 - playerCarWidth / 2;
+    const playerY = canvasHeight - playerCarHeight - 10;
+    const playerSpeed = 5;
+    let score = 0;
+
+    // Enemy car settings
+    const enemyCarWidth = 50;
+    const enemyCarHeight = 100;
+    let enemyCars = [];
+    let enemySpeed = 3;
+
+    // Key press tracking
+    let leftPressed = false;
+    let rightPressed = false;
+
+    // Function to create a new enemy car
+    function createEnemyCar() {
+        const x = Math.random() * (canvasWidth - enemyCarWidth);
+        enemyCars.push({ x: x, y: -enemyCarHeight, speed: enemySpeed });
+    }
+
+    // Draw player car
+    function drawPlayerCar() {
+        ctx.fillStyle = '#0000FF';  // Blue player car
+        ctx.fillRect(playerX, playerY, playerCarWidth, playerCarHeight);
+    }
+
+    // Draw enemy cars
+    function drawEnemyCars() {
+        enemyCars.forEach(enemyCar => {
+            ctx.fillStyle = '#FF0000';  // Red enemy car
+            ctx.fillRect(enemyCar.x, enemyCar.y, enemyCarWidth, enemyCarHeight);
+        });
+    }
+
+    // Update enemy cars
+    function updateEnemyCars() {
+        enemyCars.forEach(enemyCar => {
+            enemyCar.y += enemyCar.speed;
+        });
+
+        // Remove cars that move off the screen
+        enemyCars = enemyCars.filter(enemyCar => enemyCar.y < canvasHeight);
+
+        // Collision detection
+        enemyCars.forEach(enemyCar => {
+            if (
+                playerX < enemyCar.x + enemyCarWidth &&
+                playerX + playerCarWidth > enemyCar.x &&
+                playerY < enemyCar.y + enemyCarHeight &&
+                playerY + playerCarHeight > enemyCar.y
+            ) {
+                // Game over
+                alert('Game Over! Your score: ' + score);
+                document.location.reload();
+            }
+        });
+    }
+
+    // Move player car based on key press
+    function updatePlayerPosition() {
+        if (leftPressed && playerX > 0) {
+            playerX -= playerSpeed;
+        }
+        if (rightPressed && playerX < canvasWidth - playerCarWidth) {
+            playerX += playerSpeed;
+        }
+    }
+
+    // Draw the game
+    function draw() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // Draw player and enemies
+        drawPlayerCar();
+        drawEnemyCars();
+
+        // Display score
+        ctx.fillStyle = '#000';
+        ctx.font = '20px Arial';
+        ctx.fillText('Score: ' + score, 10, 30);
+    }
+
+    // Update game objects
+    function update() {
+        // Move player and enemies
+        updatePlayerPosition();
+        updateEnemyCars();
+
+        // Increase score over time
+        score++;
+        document.getElementById('score').innerText = score;
+
+        // Gradually increase difficulty
+        if (score % 1000 === 0) {
+            enemySpeed += 0.5;  // Increase enemy speed
+        }
+    }
+
+    // Main game loop
+    function gameLoop() {
+        update();
+        draw();
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Keydown event handler
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            leftPressed = true;
+        } else if (e.key === 'ArrowRight') {
+            rightPressed = true;
+        }
+    });
+
+    // Keyup event handler
+    document.addEventListener('keyup', (e) => {
+        if (e.key === 'ArrowLeft') {
+            leftPressed = false;
+        } else if (e.key === 'ArrowRight') {
+            rightPressed = false;
+        }
+    });
+
+    // Create enemy cars at regular intervals
+    setInterval(createEnemyCar, 1500);
+
+    // Start the game loop
+    gameLoop();
+
+</script>
+
+</body>
+</html>

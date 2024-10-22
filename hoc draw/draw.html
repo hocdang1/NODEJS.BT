@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick Figure Drawing with Colors</title>
+</head>
+<body>
+
+<canvas id="humanCanvas" width="400" height="400" style="border:1px solid #000;"></canvas>
+
+<script>
+    // Get the canvas element and the 2D drawing context
+    const canvas = document.getElementById('humanCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set the stroke color for outlines
+    ctx.strokeStyle = '#000000'; // Black color for outlines
+
+    // Set the fill color for the head
+    ctx.fillStyle = '#F0C987'; // Skin tone for the head
+
+    // Head (filled with color)
+    ctx.beginPath();
+    ctx.arc(200, 100, 40, 0, Math.PI * 2, true); // Head (circle)
+    ctx.fill(); // Fill the head with the color
+    ctx.stroke(); // Draw the outline of the head
+
+    // Body (outline)
+    ctx.strokeStyle = '#0000FF'; // Blue color for the body
+    ctx.beginPath();
+    ctx.moveTo(200, 140); // Start from the bottom of the head
+    ctx.lineTo(200, 240); // Draw the body line downwards
+    ctx.stroke();
+
+    // Arms (outline)
+    ctx.strokeStyle = '#FF0000'; // Red color for the arms
+    ctx.beginPath();
+    ctx.moveTo(150, 180); // Left arm
+    ctx.lineTo(250, 180); // Right arm
+    ctx.stroke();
+
+    // Left Leg (outline)
+    ctx.strokeStyle = '#008000'; // Green color for the left leg
+    ctx.beginPath();
+    ctx.moveTo(200, 240); // Start at the end of the body
+    ctx.lineTo(160, 300); // Left leg
+    ctx.stroke();
+
+    // Right Leg (outline)
+    ctx.strokeStyle = '#008000'; // Green color for the right leg
+    ctx.beginPath();
+    ctx.moveTo(200, 240); // Start at the end of the body
+    ctx.lineTo(240, 300); // Right leg
+    ctx.stroke();
+</script>
+
+</body>
+</html>
