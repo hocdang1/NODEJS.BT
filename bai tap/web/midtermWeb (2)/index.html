@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Lora</title>
+</head>
+<body class="bg-[#F6F3E9]">
+    <section class="w-full h-20 px-32 flex justify-between items-center border-b-2">
+        <h1 class="text-4xl">Lora.</h1>
+        <nav>
+            <ul class="flex space-x-6 font-medium text-lg">
+                <a href=""><li>Home</li></a>
+                <a href=""><li>Rooms</li></a>
+                <a href=""><li>Gallery</li></a>
+                <a href=""><li>Blog</li></a>
+                <a href=""><li>About Us</li></a>
+                <a href=""><li>Contact Us</li></a>
+            </ul>
+        </nav>
+    </section>
+    <section class="h-screen w-full px-32 flex border-b-2 mt-5">
+        <div class="w-3/5 h-4/5 flex items-center">
+            <div class="flex flex-col">
+                <span class="font-style text-7xl text-[#487254]">Memorable</span>
+                <span class="text-7xl mb-8">Hotels for 
+                    <br> moments
+                    <span class="font-style text-7xl text-[#487254]">
+                        Rush
+                    </span> 
+                    <br> in emotions
+                </span>
+                <span class="text-2xl mb-8">Deals on Discount, Special Member Prices, Instant Coupons!</span>
+                <a href="" class="bg-[#487254] w-[20%] py-3 px-4 text-white text-center text-lg font-medium rounded hover:opacity-90">Book Now</a>
+            </div>
+        </div>
+        <img src="img/3.jpg" alt="" class="w-2/4 h-4/5 rounded-md">
+    </section>
+
+    <section class="w-full h-auto px-80 text-center">
+        <h1 class="text-5xl my-10">Welcome to <span class="text-[#487254]">Lora Hotel</span></h1>
+        <span class="text-xl">
+            where luxury intertwines with elegance to create an unforgettable sanctuary. 
+            Step into a world of refined sophistication, where every detail is crafted for your comfort and delight. 
+            Indulge in our exceptional amenities, tailored services, and breathtaking surroundings. 
+            Whether for relaxation or exploration, let us make each moment of your stay a cherished memory.
+        </span>
+        <img src="img/welcome.jpg" alt="" class="mt-10 rounded-md">
+    </section>
+
+    <!-- Card -->
+    <section class="w-full h-screen px-32 mt-10 border-t-2">
+        <h1 class="text-center text-4xl mt-10"><span class="text-[#487254] font-medium">Special</span> Rooms</h1>
+        <div id="main-card" class="w-full h-full mt-10 flex justify-between">
+            <!-- Read API -->
+        </div> 
+    </section>
+
+    <!-- Search form -->
+    <section class="w-full h-[500px] my-8">
+        <div class="relative w-full h-full">
+            <span class="absolute top-5 left-1/2 transform -translate-x-1/2 text-white text-4xl z-10 mt-4">Make A Reservation</span>
+            <img src="img/reversation.jpg" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+    
+            <!-- search form placed inside the image container -->
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+                <div class="max-w-4xl shadow-lg rounded-lg">
+                    <form class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                        <div class="flex flex-col">
+                            <label for="checkin" class="font-semibold text-white">Check in:</label>
+                            <input type="date" id="checkin" name="checkin" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <label for="checkout" class="font-semibold text-white">Check out:</label>
+                            <input type="date" id="checkout" name="checkout" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <label for="adults" class="font-semibold text-white">Adults:</label>
+                            <input type="number" id="adults" name="adults" min="1" value="2" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <label for="kids" class="font-semibold text-white">Kids:</label>
+                            <input type="number" id="kids" name="kids" min="0" value="1" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <label for="room" class="font-semibold text-white">Room:</label>
+                            <select id="room" name="room" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                                <option>All</option>
+                                <option>Standard Room</option>
+                                <option>Family Room</option>
+                                <option>Luxury Room</option>
+                                <option>Deluxe Room</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="md:col-span-3 mt-5">
+                        <button onclick="searchRooms()" class="w-full bg-[#487254] text-white text-lg font-medium py-2 px-4 rounded-md hover:opacity-90">
+                            Search now
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    
+    <section class="w-full h-screen px-32 mt-10">
+        <div id="main-card2" class="w-full h-full mt-10 flex justify-between">
+            <!-- Read API -->
+        </div> 
+    </section>
+
+    <section class="w-full h-auto py-6 border-t-2 mb-16">
+        <h1 class="text-center text-4xl mb-10">Abous Us & Lora</h1>
+        <div class="px-32">
+            <div class="flex justify-between items-center">
+                 <span class="text-2xl">
+                    <strong class="text-2xl text-[#487254]">Guest-Centered Excellence</strong>
+                    <br>
+                    Our guests are at the heart of everything we do.
+                    Our team of skilled professionals is committed to providing top-tier services,
+                    from fine dining experiences curated by world-class chefs to exclusive spa treatments that rejuvenate the body and soul.
+                    At Lora Hotel, every detail is crafted with care, making us the ideal destination for both leisure and business travelers.
+                </span>
+                <img src="img/aboutus.jpg" alt="" class="w-2/4 h-4/5 rounded-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal booking & guest -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg w-full max-w-6xl shadow-lg relative">
+            <!-- Close Button -->
+            <button onclick="document.getElementById('booking-modal').classList.add('hidden')" class="absolute top-4 right-6 text-gray-500 hover:text-gray-800 focus:outline-none text-3xl">
+                &times;
+            </button>
+
+            <!-- Tab Navigation -->
+            <div class="flex justify-center mb-6">
+                <button onclick="showTab('booking')" id="tab-booking" class="text-lg font-semibold mr-4 text-[#487254] focus:outline-none border-b-2 border-[#487254]">Booking</button>
+                <button onclick="showTab('confirmation')" id="tab-confirmation" class="text-lg font-medium focus:outline-none border-b-2 border-[#487254]">Confirmation</button>
+            </div>
+
+            <!-- Booking Section -->
+            <div id="booking-section" class="tab-content">
+                <h2 class="text-2xl font-bold mb-4">Family Room</h2>
+                <p class="text-gray-700 mb-4">Room Info (1 Bed, 1 Adult, 2 Children, Attached Bathroom)</p>
+                <button class="bg-[#487254] hover:opacity-90 text-white font-medium py-2 px-4 rounded mb-4">Check Availability</button>
+                
+                <h3 class="text-xl font-bold mt-6 mb-4">Additional Services</h3>
+                <form class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="60">
+                        <label class="text-gray-700">Car & ATV Rental - <span class="font-bold">60</span></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="70">
+                        <label class="text-gray-700">Yacht Hiring - <span class="font-bold">70</span></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="10">
+                        <label class="text-gray-700">Postal/Parcel Service - <span class="font-bold">10</span></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="80">
+                        <label class="text-gray-700">Porter Service - <span class="font-bold">80</span></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="20">
+                        <label class="text-gray-700">Horse Back Riding - <span class="font-bold">20</span></label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-2" value="100">
+                        <label class="text-gray-700">Room - <span class="font-bold">100</span></label>
+                    </div>
+                </form>
+
+                <form action="" class="grid grid-cols-2 gap-4 mt-4">
+                    <!-- Booking Form -->
+                    <div>
+                        <label for="checkin" class="block text-gray-700 font-bold mb-2">Check-in:</label>
+                        <input type="date"  id="checkin" name="checkin" class="border border-gray-300 p-2 rounded w-full" required>
+                    </div>
+                    <div>
+                        <label for="checkout" class="block text-gray-700 font-bold mb-2">Check-out:</label>
+                        <input type="date"  id="checkout" name="checkout" class="border border-gray-300 p-2 rounded w-full" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Select Adults:</label>
+                        <select id="adults" name="adults" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Select Children:</label>
+                        <select id="children" name="children" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                </form>
+
+                <button onclick="showTab('confirmation')" id="proceedBooking" class="bg-[#487254] hover:opacity-90 text-white font-medium py-2 px-4 rounded mt-4 w-full">Proceed</button>
+            </div>
+
+            <!-- Confirmation Section -->
+            <div id="confirmation-section" class="tab-content hidden">
+                <h2 class="text-2xl font-bold mb-6">Confirm and Book Room</h2>
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Guest Information -->
+                    <form>
+                        <h3 class="text-lg font-semibold mb-4">Guest Information</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="first-name" class="block text-sm font-semibold text-gray-700">First Name:</label>
+                                <input type="text" id="first-name" name="first-name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                            </div>
+                            <div class="mb-4">
+                                <label for="last-name" class="block text-sm font-semibold text-gray-700">Last Name:</label>
+                                <input type="text" id="last-name" name="last-name" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-semibold text-gray-700">Phone Number:</label>
+                                <input type="text" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-semibold text-gray-700">Email:</label>
+                                <input type="text" id="email" name="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="addL1" class="block text-sm font-semibold text-gray-700">Address Line 1:</label>
+                            <input type="text" id="addL1" name="addL1" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div class="mb-4">
+                            <label for="addL2" class="block text-sm font-semibold text-gray-700">Address Line 2:</label>
+                            <input type="text" id="addL2" name="addL2" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div class="mb-4">
+                            <label for="SpecR" class="block text-sm font-semibold text-gray-700">Special Request:</label>
+                            <input type="text" id="SpecR" name="SpecR" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                    </form>
+
+                    <!-- Billing Details -->
+                    <form>
+                        <h3 class="text-lg font-semibold mb-4">Billing Details</h3>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Arrival:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Departure:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Length of Stay:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Room:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Guest:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Subtotal:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                        <div class="mb-4">
+                            <label for="arrival" class="block text-sm font-semibold text-gray-700">Total Cost:</label>
+                            <input type="text" id="arrival" name="arrival" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                        </div>
+                    </form>
+                </div>
+
+                <button id="submitBooking" class="bg-[#487254] hover:opacity-90 text-white font-bold py-2 px-4 rounded mt-4 w-full">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main modal for detail -->
+    <div id="modal-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div id="default-modal" class="bg-white w-full max-w-2xl rounded-lg shadow-lg dark:bg-gray-700 overflow-hidden">
+            <!-- Modal header -->
+            <div class="flex justify-between items-center p-4 border-b dark:border-gray-600">
+                <h3 id="modal-title" class="text-xl font-semibold text-gray-900 dark:text-white">Product Name</h3>
+                <button type="button" onclick="closeModal()" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-5">
+                <img id="modal-image" src="" alt="Product Image" class="w-full h-80 object-cover rounded-md mb-4">
+                <p id="modal-description" class="text-base leading-relaxed text-gray-500 dark:text-gray-400 mb-4">Product description goes here.</p>
+                <p id="modal-price" class="text-lg font-medium text-gray-900 dark:text-white"></p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex justify-end p-4 border-t dark:border-gray-600">
+                <button type="button" onclick="closeModal()" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Huynh™</a>. All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+<script src="js/main.js"></script>
+<script src="js/hotel.js"></script>
+<script src="js/hotel2.js"></script>
+<script src="js/detail.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/guest.js"></script>
+<script src="js/billing.js"></script>
+<script src="js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</html>

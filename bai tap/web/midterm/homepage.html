@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Highlights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Room Highlights</h1>
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+            <button class="tab active">All Rooms</button>
+            <button class="tab">Double Room</button>
+            <button class="tab">Family Room</button>
+            <button class="tab">Luxury Room</button>
+            <button class="tab">Single Room</button>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <ul>
+                <li>Full Breakfast</li>
+                <li>Service Bar</li>
+                <li>Cable / Satellite TV</li>
+                <li>Hair Dresser</li>
+            </ul>
+        </div>
+
+        <!-- Room Container -->
+        <div id="room-container" class="room-container">
+            
+        </div>
+    </div>
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="roomModal" tabindex="-1" aria-labelledby="roomModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modalRoomName" class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3">
+                    <p id="modalBilling" class="text-orange-600 fw-bold"></p>
+                    <p id="modalDescription" class="text-muted"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+       <div class="reservation-container">
+        <h1>Make A Reservation</h1>
+        <form class="reservation-form">
+            <div class="form-group">
+                <label for="checkin">Check in:</label>
+                <input type="date" id="checkin" name="checkin">
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check out:</label>
+                <input type="date" id="checkout" name="checkout">
+            </div>
+            <div class="form-group">
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" min="1" value="2">
+            </div>
+            <div class="form-group">
+                <label for="kids">Kids:</label>
+                <input type="number" id="kids" name="kids" min="0" value="1">
+
+            </div>
+            <label for="room-search">Search Room by Name:</label>
+            <input type="text" id="room-search" name="room-search" placeholder="Enter room name" />
+            <div class="form-group">
+                <label for="room">Room:</label>
+                <select id="room" name="room">
+                    <option>Double Room</option>
+                    <option>Family Room</option>
+                    <option>Luxury Room</option>
+                    <option>Single Room</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="search-button">Search Now</button>
+        </form>
+
+    </div> 
+    <div class="container">
+        <div class="header">
+          <div class="step">2 COMPLETE</div>
+          <h1>Confirm and Book Room</h1>
+        </div>
+    
+        <div class="form-container">
+          <div class="guest-info">
+            <h2>Guest Information</h2>
+            <form>
+              <input type="text" placeholder="First Name">
+              <input type="text" placeholder="Last Name">
+              <input type="text" placeholder="Number">
+              <input type="email" placeholder="Email">
+              <input type="text" placeholder="Address Line 1">
+              <input type="text" placeholder="Address Line 2">
+              <textarea placeholder="Special Request"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+    
+          <div class="billing-details">
+            <h2>Billing Details</h2>
+            <div class="details">
+              <p>Arrival:</p>
+              <p>Departure:</p>
+              <p>Length of Stay:</p>
+              <p>Room: Standard Room</p>
+              <p>Guests:</p>
+            </div>
+            <div class="costs">
+              <p><span>Best Available Rate:</span> 450$</p>
+              <p><span>Additional Services:</span></p>
+              <p><span>Additional Services Charges:</span> 450$</p>
+              <p><span>Subtotal:</span> 450$</p>
+              <p><span>Total Cost:</span> 450$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</body>
+<script src="homepage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

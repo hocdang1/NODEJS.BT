@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('https://via.placeholder.com/1500x800'); /* Đặt hình nền theo ý bạn */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.reservation-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Độ mờ cho nền */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    text-align: center;
+}
+
+.reservation-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.reservation-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px);
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.search-button {
+    flex: 1 1 100%;
+    padding: 15px;
+    background-color: #b04f35;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.search-button:hover {
+    background-color: #8a3928;
+}

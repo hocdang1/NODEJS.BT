@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make A Reservation</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <div class="reservation-container">
+        <h1>Make A Reservation</h1>
+        <form class="reservation-form">
+            <div class="form-group">
+                <label for="checkin">Check in:</label>
+                <input type="date" id="checkin" name="checkin">
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check out:</label>
+                <input type="date" id="checkout" name="checkout">
+            </div>
+            <div class="form-group">
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" min="1" value="2">
+            </div>
+            <div class="form-group">
+                <label for="kids">Kids:</label>
+                <input type="number" id="kids" name="kids" min="0" value="1">
+            </div>
+            <div class="form-group">
+                <label for="room">Room:</label>
+                <select id="room" name="room">
+                    <option>Double Room</option>
+                    <option>Family Room</option>
+                    <option>Luxury Room</option>
+                    <option>Single Room</option>
+                </select>
+            </div>
+            <button type="submit" class="search-button">Search Now</button>
+        </form>
+
+    </div>
+    <script src="web.js"></script>
+</body>
+</html>

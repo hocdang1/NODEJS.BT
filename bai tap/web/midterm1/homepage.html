@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Highlights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Room Highlights</h1>
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+            <button class="tab active">All Rooms</button>
+            <button class="tab">Double Room</button>
+            <button class="tab">Family Room</button>
+            <button class="tab">Luxury Room</button>
+            <button class="tab">Single Room</button>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <ul>
+                <li>Full Breakfast</li>
+                <li>Service Bar</li>
+                <li>Cable / Satellite TV</li>
+                <li>Hair Dresser</li>
+            </ul>
+        </div>
+
+        <!-- Room Container -->
+        <div id="room-container" class="room-container">
+            
+        </div>
+    </div>
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="roomModal" tabindex="-1" aria-labelledby="roomModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modalRoomName" class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3">
+                    <p id="modalBilling" class="text-orange-600 fw-bold"></p>
+                    <p id="modalDescription" class="text-muted"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="reservation-container">
+        <h1>Make A Reservation</h1>
+        <form id="reservation-form" class="reservation-form">
+            <!-- Existing form elements here -->
+           
+                <div class="form-group">
+                    <label for="checkin">Check in:</label>
+                    <input type="date" id="checkin" name="checkin">
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check out:</label>
+                    <input type="date" id="checkout" name="checkout">
+                </div>
+                <div class="form-group">
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" name="adults" min="1" value="2">
+                </div>
+                <div class="form-group">
+                    <label for="kids">Kids:</label>
+                    <input type="number" id="kids" name="kids" min="0" value="1">
+            <div class="form-group">
+                <label for="room">Room:</label>
+                <select id="room-select" name="room">
+                    <option value="All">All</option>
+                    <option value="Double Room">Double Room</option>
+                    <option value="Family Room">Family Room</option>
+                    <option value="Luxury Room">Luxury Room</option>
+                    <option value="Single Room">Single Room</option>
+                </select>
+            </div>
+            <button type="button" id="search-button" class="search-button">Search Now</button>
+        </form>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="confirmModalLabel">Confirm and Book Room</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="header">
+                            <div class="step">2 COMPLETE</div>
+                            <h1>Confirm and Book Room</h1>
+                        </div>
+                        <div class="form-container">
+                            <div class="guest-info">
+                                <h2>Guest Information</h2>
+                                <form>
+                                    <input type="text" placeholder="First Name" required>
+                                    <input type="text" placeholder="Last Name" required>
+                                    <input type="text" placeholder="Number" required>
+                                    <input type="email" placeholder="Email" required>
+                                    <input type="text" placeholder="Address Line 1" required>
+                                    <input type="text" placeholder="Address Line 2">
+                                    <textarea placeholder="Special Request"></textarea>
+                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                </form>
+                            </div>
+                            <div class="billing-details">
+                                <h2>Billing Details</h2>
+                                <div class="details">
+                                    <p>Arrival:</p>
+                                    <p>Departure:</p>
+                                    <p>Length of Stay:</p>
+                                    <p>Room: Standard Room</p>
+                                    <p>Guests:</p>
+                                </div>
+                                <div class="costs">
+                                    <p><span>Best Available Rate:</span> 450$</p>
+                                    <p><span>Additional Services:</span></p>
+                                    <p><span>Additional Services Charges:</span> 450$</p>
+                                    <p><span>Subtotal:</span> 450$</p>
+                                    <p><span>Total Cost:</span> 450$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Confirm and Book Room</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Room Booking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>Family Room</h2>
+                    <p>Room Info: 1 Bed, 1 Adult, 2 Children, Attached Bathroom</p>
+
+                    <form class="booking-form">
+                        <button class="availability-btn btn btn-secondary">Check Room Availability</button>
+
+                        <section class="additional-services mt-3">
+                            <h3>Additional Services</h3>
+                            <div class="service-options">
+                                <label><input type="checkbox" name="service" value="60"> Car & ATV Rental - $60</label><br>
+                                <label><input type="checkbox" name="service" value="70"> Yacht Hiring - $70</label><br>
+                                <label><input type="checkbox" name="service" value="10"> Postal/Parcel Services - $10</label><br>
+                                <label><input type="checkbox" name="service" value="80"> Porter Service - $80</label><br>
+                                <label><input type="checkbox" name="service" value="20"> Horse Back Riding - $20</label><br>
+                                <label><input type="checkbox" name="service" value="100"> Room Service - $100</label>
+                            </div>
+                        </section>
+
+                        <section class="date-selection mt-3">
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" name="start-date" class="form-control" required>
+                            <label for="end-date" class="mt-2">End Date:</label>
+                            <input type="date" id="end-date" name="end-date" class="form-control" required>
+                        </section>
+
+                        <section class="guest-selection mt-3">
+                            <label for="adults">Adults:</label>
+                            <select id="adults" name="adults" class="form-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+
+                            <label for="children" class="mt-2">Children:</label>
+                            <select id="children" name="children" class="form-select">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </section>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Confirm and Book Room</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="homepage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

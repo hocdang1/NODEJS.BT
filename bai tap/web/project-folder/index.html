@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restinn Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Restinn Clone</h1>
+    <nav>
+      <a href="#rooms">Rooms</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Booking Section -->
+  <section class="booking">
+    <h2>Make A Reservation</h2>
+    <form id="reservation-form">
+      <input type="date" placeholder="Check-in" required>
+      <input type="date" placeholder="Check-out" required>
+      <input type="number" placeholder="Adults" min="1" required>
+      <input type="number" placeholder="Children" min="0" required>
+      <button type="submit">Search Now</button>
+    </form>
+  </section>
+
+  <!-- Room List Section -->
+  <section id="rooms" class="room-list">
+    <h2>Room Highlights</h2>
+    <div class="rooms-container">
+      <!-- Room Item -->
+      <div class="room-item">
+        <img src="images/family-room.jpg" alt="Family Room">
+        <h3>Family Room</h3>
+        <p>From $100/night</p>
+        <a href="room-detail.html">View Details</a>
+      </div>
+      <!-- Repeat room items as necessary -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

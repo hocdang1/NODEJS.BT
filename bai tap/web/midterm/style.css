@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #b04f35;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.tab.active {
+    background-color: #8a3928;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.features ul {
+    list-style: none;
+}
+
+.features ul li {
+    margin-bottom: 10px;
+}
+
+.room-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.room-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.room-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.room-card p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.book-now {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* Dùng mã CSS bạn đã cung cấp */
+
+.room-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.reservation-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Độ mờ cho nền */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    text-align: center;
+}
+
+.reservation-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.reservation-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px);
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.search-button {
+    flex: 1 1 100%;
+    padding: 15px;
+    background-color: #b04f35;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.search-button:hover {
+    background-color: #8a3928;
+}
+.container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .header {
+    background-color: #b85c44;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header .step {
+    font-size: 1.2em;
+    margin-right: 15px;
+  }
+  
+  .header h1 {
+    font-size: 1.5em;
+  }
+  
+  .form-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .guest-info, .billing-details {
+    width: 50%;
+  }
+  
+  .guest-info h2, .billing-details h2 {
+    color: #b85c44;
+    margin-bottom: 15px;
+  }
+  
+  .guest-info form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .guest-info form input, .guest-info form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .guest-info form textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  .guest-info form button {
+    background-color: #b85c44;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .guest-info form button:hover {
+    background-color: #994c38;
+  }
+  
+  .billing-details .details p, .billing-details .costs p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .billing-details .costs p {
+    font-weight: bold;
+  }
+  
+  .billing-details .costs span {
+    color: #b85c44;
+  }
+

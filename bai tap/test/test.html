@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product CRUD</title>
+  <style>
+    .card-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px; width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+    .card h3 { margin: 0 0 10px 0; }
+    .card p { font-size: 14px; color: #555; }
+    .form-group { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Product CRUD</h1>
+  
+  <!-- Form thêm sản phẩm mới -->
+  <div>
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productPrice" placeholder="Product Price">
+    <button onclick="createProduct()">Add Product</button>
+  </div>
+
+  <div id="card-container" class="card-container"></div>
+    <div>
+        <label> Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label> Description</label>
+        <input type="text" name="description">
+    </div>
+  <!-- Nơi chứa các card sản phẩm -->
+  <div id="card-container" class="card-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
